@@ -1,0 +1,26 @@
+{
+  "name": "runescape-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/server.js",
+  "scripts": {
+    "start": "nodemon ./app/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timwaldron/runescape-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timwaldron/runescape-api/issues"
+  },
+  "homepage": "https://github.com/timwaldron/runescape-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.1"
+  }
+}
