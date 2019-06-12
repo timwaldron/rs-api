@@ -9,7 +9,7 @@ const osrsWebOrder = [
   "clue_scrolls_hard", "clue_scrolls_elite", "clue_scrolls_master", "last_man_standing"
 ];
 
-const apiList = {
+const apiUrlList = {
   osrs: {
     main: "https://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=",
     im: "https://services.runescape.com/m=hiscore_oldschool_ironman/index_lite.ws?player=",
@@ -22,14 +22,19 @@ const apiList = {
 };
 
 const fetchOSRSHiscore = async(params) => {
-  let player = {username: params.username, combat_level: 0, skills: {}, minigames: {clue_scrolls: {}}};
-  let response = await fetch(apiList[params.game][params.category] + params.username);
+  let response = await fetch(apiUrlList[params.game][params.category] + params.username);
 
-  if (response.status == 404) return { error: "Returned 404 from the endpoint " + params.game + "/" + params.category + "/" + params.username };
+  if (response.status == 404)
+    return { error: "Returned 404 from the endpoint " + params.game + "/" + params.category + "/" + params.username };
 
-  let data = await response.text();
+  let sortedData = sortHiscoreData(params.username, await response.text());
+  return sortedData;
+}
 
-  data.split("\n").forEach((entry, index) => {
+const sortHiscoreData = (username, rawData) => {
+  let player = {username: username, combat_level: 0, skills: {}, minigames: {clue_scrolls: {}}};
+  
+  rawData.split("\n").forEach((entry, index) => {
     if (entry === "") return;
     
     let entryStat = entry.split(",");
@@ -57,6 +62,7 @@ const fetchOSRSHiscore = async(params) => {
   });
 
   player.combat_level = calculateCombatLevel(player);
+
   return player;
 }
 
