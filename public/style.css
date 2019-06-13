@@ -91,17 +91,13 @@ code {
   width: 100%;
   flex-wrap: wrap;
 }
-.compare-left {
+.compare-panel {
   display: flex;
   width: 50%;
   flex-direction: column;
   align-items: center;
-}
-.compare-right {
-  display: flex;
-  width: 50%;
-  flex-direction: column;
-  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .custom-link {
