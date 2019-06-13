@@ -64,9 +64,4 @@ app.get("/api/:game/:category/:username", (req, res) => {
   res.json({url: apiList.osrsHiscores});
 })
 
-// app.get("/api/:game/:username/:item", (req, res) => {
-//   console.log(req.params);
-//   res.json({url: apiList.osrsHiscores});
-// })
-
 app.listen(3000, () => console.log("Server listing on port 3000..."))
