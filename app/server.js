@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
@@ -64,4 +66,4 @@ app.get("/api/:game/:category/:username", (req, res) => {
   res.json({url: apiList.osrsHiscores});
 })
 
-app.listen(process.env.PORT, () => console.log("Server listing on port " + process.env.PORT + "..."));
+app.listen(PORT, () => console.log("Server listing on port " + PORT + "..."));
