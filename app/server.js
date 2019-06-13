@@ -5,13 +5,13 @@ const cors = require("cors");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-const REQUIRE_SSL = process.env.REQUIRE_SSL || true;
+const REQUIRE_SSL = process.env.REQUIRE_SSL || false;
 
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
 
-if (REQUIRE_SSL) {
+if (REQUIRE_SSL.toString() == "true") {
   console.log("Forcing SSL");
   app.use(forceSsl);
 }
