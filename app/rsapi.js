@@ -33,7 +33,7 @@ const fetchOSRSHiscore = async(params) => {
 
 const sortHiscoreData = (username, rawData) => {
   let player = {username: username, combat_level: 0, skills: {}, minigames: {clue_scrolls: {}}};
-  
+
   rawData.split("\n").forEach((entry, index) => {
     if (entry === "") return;
     
@@ -48,14 +48,13 @@ const sortHiscoreData = (username, rawData) => {
     } else {
       if (osrsWebOrder[index].toLowerCase().startsWith("clue")) {
         let clueDifficulty = osrsWebOrder[index].split("_")[2]; // Clue difficulty
+        
         player.minigames.clue_scrolls[clueDifficulty] = {
           rank: parseInt(entryStat[0]),
           score: parseInt(entryStat[1])
         }
       } else {
-        player.minigames[osrsWebOrder[index]] = {
-          rank: parseInt(entryStat[0]),
-          score: parseInt(entryStat[1])
+        player.minigames[osrsWebOrder[index]] = { rank: parseInt(entryStat[0]), score: parseInt(entryStat[1])
         }
       }
     }
@@ -88,4 +87,4 @@ const calculateCombatLevel = (playerObject) => {
   return final;
 }
 
-module.exports = {fetchOSRSHiscore};
+module.exports = { fetchOSRSHiscore };
