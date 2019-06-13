@@ -4,23 +4,19 @@ const cors = require("cors");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const NODE_ENV = process.env.NODE_ENV || "development";
 
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
 
+if (NODE_ENV === "production") {
+  const enforce = require("express-sslify");
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
+
 app.use((req, res, next) => {
   console.log("LOG:", req.method, req.path, req.ip);
-  var sslUrl;
-
-  if (NODE_ENV === 'production' &&
-    req.headers['x-forwarded-proto'] !== 'https') {
-
-    sslUrl = ['https://rs-api.cloud', req.url].join('');
-    return res.redirect(sslUrl);
-  }
-
   next();
 });
 
@@ -45,7 +41,7 @@ app.get("/api/:game/:username", (req, res) => {
       break;
 
     default:
-      res.json({"error": `'${req.params.game} is an invalid gametype`});
+      res.json({"error": `'${req.params.game}' is an invalid gametype`});
       return;
   }
 
@@ -69,7 +65,7 @@ app.get("/api/:game/:category/:username", (req, res) => {
       break;
 
     default:
-      res.json({"error": `'${req.params.game} is an invalid gametype`});
+      res.json({"error": `'${req.params.game}' is an invalid gametype`});
       return;
   }
 
