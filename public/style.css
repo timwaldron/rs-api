@@ -21,9 +21,8 @@ a {
 }
 
 .title {
-  height: 100px;
+  height: 101px;
   width: 100%;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,10 +66,11 @@ a {
   font-size: 38px;
 }
 .link-resize {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .text {
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
 }
