@@ -18,6 +18,18 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/about", (req, res) => {
+  res.sendFile(__dirname + "/views/about.html");
+});
+
+app.get("/docs", (req, res) => {
+  res.sendFile(__dirname + "/views/docs.html");
+});
+
+app.get("/examples", (req, res) => {
+  res.sendFile(__dirname + "/views/examples.html");
+});
+
 app.get("/api/:game/:username", (req, res) => {
   let params = {
     game: req.params.game.toLowerCase(),
