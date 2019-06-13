@@ -4,25 +4,10 @@ const cors = require("cors");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-const NODE_ENV = process.env.NODE_ENV || "development";
 
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
-
-const sslRedirect = function(req, res, next) {
-  if (NODE_ENV === "production") {
-      if (req.headers["x-forwarded-proto"] != "https") {
-          return res.redirect("https://" + req.headers.host + req.url);
-      } else {
-          return next();
-      }
-  } else {
-      return next();
-  }
-};
-
-app.use(sslRedirect);
 
 app.use((req, res, next) => {
   console.log("LOG:", req.method, req.path, req.ip);
