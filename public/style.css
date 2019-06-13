@@ -15,8 +15,7 @@
 .title {
   height: 75px;
   width: 100%;
-  background: dodgerblue;
-
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,19 +31,26 @@
 .content {
   height: 100%;
   width: 100%;
-  background: orange;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url("./images/osrs-hd-blur.png") no-repeat center;
 }
 
 .footer {
   height: 50px;
   width: 100%;
-  background: dodgerblue;
 
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.icon {
+  font-size: 32px;
+}
+.custom-link {
+  text-decoration: none;
+  color: black;
 }

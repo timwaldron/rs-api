@@ -21,6 +21,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-sslify": "^1.2.0",
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1"
   }
