@@ -1,4 +1,34 @@
-# rs-api
-Old School / RuneScape 3 API written in Express
+# RS-API
+Unofficial Old School / RuneScape 3 API written in Node.js using Express.  
+This README is still being made.
 
-To be written
+
+  
+
+# How to use
+## Endpoints
+    https://rs-api.cloud/api/:game/:username
+## Example
+    https://rs-api.cloud/api/osrs/dimsimtim
+    
+    {
+    "username": "test",
+    "combat_level": 126,
+      "skills": {
+        "overall": {
+          "experience": 1038978276,
+          "level": 2069,
+          "rank": 38455
+        },
+        "attack": {
+          "experience": 109464513,
+          "level": 99,
+          "rank": 250
+        },
+        "defence": { ... },
+      },
+      "...": { ... },
+      "...": { ... },
+      "...": { ... },
+    }
+
