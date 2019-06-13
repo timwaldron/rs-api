@@ -80,6 +80,7 @@ code {
 .content-title {
   display: flex;
   align-items: center; 
+  margin-bottom: 10px;
 }
 .content-title small {
   margin: 0 5px 0 5px;
