@@ -1,6 +1,7 @@
 const rsapi = require("./rsapi.js");
 const express = require("express");
 const cors = require("cors");
+const sslRedirect = require('heroku-ssl-redirect');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -11,8 +12,8 @@ app.use(express.json());
 app.use(cors());
 
 if (NODE_ENV === "production") {
-  const enforce = require("express-sslify");
-  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+  app.use(sslRedirect());
+  console.log("Enforcing SSL");
 }
 
 app.use((req, res, next) => {
