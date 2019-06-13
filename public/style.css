@@ -12,6 +12,8 @@ a {
 
 code {
   font-family: monospace;
+  font-size: 12px;
+  overflow-y: scroll;
 }
 
 .container {
