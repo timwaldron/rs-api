@@ -1,58 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/6c80791dfe.js"></script>
-    <link rel="icon" href="./images/favicon.ico">
-    <title>RS-API</title>
-  </head>
-  <body>
 
-    <div class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/6c80791dfe.js"></script>
+  <link rel="icon" href="./images/favicon.ico">
+  <title>RS-API</title>
+</head>
 
-      <div class="title">
-        <div class="title-logo">
-          <a href="/" class="title-text">
-            <div class="logo">
-              <img class="image-format" src="./images/logo.png" alt="RS-API Logo">
-            </div>
-            <div class="text">
-              <h2>RS-API</h2>
-              <small>unofficial</small>
-              <p>RuneScape API</p>
-            </div>
-          </a>
-        </div>
+<body>
 
-        <div class="title-navbar">
-          <a class="custom-link link-resize" href="./about">About</a>
-          <a class="custom-link link-resize" href="./docs">Docs</a>
-          <a class="custom-link link-resize" href="./examples">Examples</a>
-          <a class="custom-link favicon-resize" href="https://github.com/timwaldron/rs-api" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
+  <div class="container">
+
+    <div class="title">
+      <div class="title-logo">
+        <a href="/" class="title-text">
+          <div class="logo">
+            <img class="image-format" src="./images/logo.png" alt="RS-API Logo">
+          </div>
+          <div class="text">
+            <h2>RS-API</h2>
+            <small>unofficial</small>
+            <p>RuneScape API</p>
+          </div>
+        </a>
       </div>
 
-      <div class="content">
-        <div class="content-panel">
+      <div class="title-navbar">
+        <a class="custom-link link-resize" href="./about">About</a>
+        <a class="custom-link link-resize" href="./docs">Docs</a>
+        <a class="custom-link link-resize" href="./examples">Examples</a>
+        <a class="custom-link favicon-resize" href="https://github.com/timwaldron/rs-api" target="_blank"><i
+            class="fab fa-github"></i></a>
+      </div>
+    </div>
 
-          <div class="content-title">
-            <h1>The</h1><small>unofficial</small><h1>RuneScape API</h1>
-          </div>
+    <div class="content">
 
-          <div class="compare-container">
-            <div class="compare-left">
-              Why have
-            </div>
-            <div class="compare-right">
-              When you could have
-            </div>
-          </div>
+      <div class="content-title">
+        <h1>The</h1><small>unofficial</small>
+        <h1>RuneScape API</h1>
+      </div>
+
+      <div class="compare-container">
+        <div class="compare-left">
+
+          <small>https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=test</small>
+
+<pre><code>
+38455,2069,1038978276
+250,99,109464513
+268,99,81465471
+59,99,200000000
+91,99,191566572
+187,99,139250012
+5348,99,13195370
+703,99,44520905
+173306,90,5378086
+248003,78,1671045
+34264,99,13119027
+180638,82,2431302
+115780,90,5392298
+63656,87,4029730
+64896,85,3279646
+216363,73,1015652
+21759,97,11099714
+75724,80,2099737
+69901,85,3318699
+47,99,130391562
+454,99,69022800
+85283,72,979483
+223005,70,747565
+21598,90,5539087
+</code></pre>
+        </div>
+
+        <div class="compare-right">
+<pre><code>
+{
+  "username": "test",
+  "combat_level": 126,
+  "skills": {
+    "overall": {
+      "experience": 38455,
+      "level": 2069,
+      "rank": 1038978276
+    },
+    "attack": {
+      "experience": 250,
+      "level": 99,
+      "rank": 109464513
+    },
+    "defence": { ... },
+  },
+  "minigames": {
+    "clue_scrolls": {
+      "all": {
+        "rank": -1,
+        "score": -1
+      },
+      "beginner": {
+        "rank": 563,
+        "score": 2564
+      },
+      "easy": { ... },
+    },
+    "bounty_hunter": { ... }
+  }
+}
+</pre></code>
+
+
         </div>
       </div>
 
     </div>
-  </body>
+
+  </div>
+</body>
+
 </html>

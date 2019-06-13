@@ -41,9 +41,9 @@ const sortHiscoreData = (username, rawData) => {
 
     if (entryStat.length === 3) {
       player.skills[osrsWebOrder[index]] = {
-        experience: parseInt(entryStat[0]),
+        rank: parseInt(entryStat[0]),
         level: parseInt(entryStat[1]),
-        rank: parseInt(entryStat[2])
+        experience: parseInt(entryStat[2])
       };
     } else {
       if (osrsWebOrder[index].toLowerCase().startsWith("clue")) {
