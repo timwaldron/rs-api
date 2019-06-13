@@ -11,10 +11,8 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
 
-if (REQUIRE_SSL.toString() == "true") {
-  console.log("Forcing SSL");
+if (REQUIRE_SSL)
   app.use(forceSsl);
-}
 
 app.use((req, res, next) => {
   console.log("LOG:", req.method, req.path, req.ip);
