@@ -1,20 +1,13 @@
 const rsapi = require("./rsapi.js");
 const express = require("express");
-const forceSsl = require('force-ssl-heroku');
 const cors = require("cors");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-const REQUIRE_SSL = process.env.REQUIRE_SSL || false;
 
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
-
-if (REQUIRE_SSL.toString() == "true") {
-  console.log("Forcing SSL");
-  app.use(forceSsl);
-}
 
 app.use((req, res, next) => {
   console.log("LOG:", req.method, req.path, req.ip);
