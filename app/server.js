@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
@@ -76,6 +78,6 @@ app.get("/api/:game/:category/:username", (req, res) => {
   res.json({url: apiList.osrsHiscores});
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(`Example app listening on port 3000!`);
 });
