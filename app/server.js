@@ -1,7 +1,9 @@
 const rsapi = require("./rsapi.js");
 const express = require("express");
+const mongoose = require('mongoose');
 const cors = require("cors");
 const app = express();
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,6 +15,17 @@ app.use((req, res, next) => {
   console.log("LOG:", req.method, req.path, req.ip);
   next();
 });
+
+const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
+
+const pokemonSchema = new Schema({
+  name: String,
+});
+
+
+mongoose.createConnection('mongodb://localhost/pokemondb', {useNewUrlParser: true});
+const pokemon = mongoose.model('pokemon', pokemonSchema);
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
@@ -78,4 +91,6 @@ app.get("/api/:game/:category/:username", (req, res) => {
   res.json({url: apiList.osrsHiscores});
 })
 
-app.listen(PORT, () => console.log("Server listing on port " + PORT + "..."));
+app.listen(3000, () => {
+  console.log(`Example app listening on port 3000!`);
+});

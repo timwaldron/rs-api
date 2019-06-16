@@ -1,0 +1,11 @@
+.content {
+  justify-content: flex-start;
+}
+
+pre.prettyprint, code.prettyprint {
+  font-family: monospace; /* doesn't work why? */
+  /* overflow: auto; */
+  /* display: block; */
+  /* font-size: 8pt; doesn't work */
+  /* background-color: #333; this works */
+}
