@@ -1,6 +1,5 @@
 const rsapi = require("./rsapi.js");
 const express = require("express");
-const mongoose = require('mongoose');
 const cors = require("cors");
 const app = express();
 
@@ -15,17 +14,6 @@ app.use((req, res, next) => {
   console.log("LOG:", req.method, req.path, req.ip);
   next();
 });
-
-const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
-
-const pokemonSchema = new Schema({
-  name: String,
-});
-
-
-mongoose.createConnection('mongodb://localhost/pokemondb', {useNewUrlParser: true});
-const pokemon = mongoose.model('pokemon', pokemonSchema);
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
