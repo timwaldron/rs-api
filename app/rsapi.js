@@ -12,9 +12,6 @@ const osrsWebOrder = [
 const apiUrlList = {
   osrs: {
     main: "https://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=",
-    im: "https://services.runescape.com/m=hiscore_oldschool_ironman/index_lite.ws?player=",
-    hc: "https://services.runescape.com/m=hiscore_oldschool_hardcore_ironman/index_lite.ws?player=",
-    uim: "https://services.runescape.com/m=hiscore_oldschool_ultimate/index_lite.ws?player=",
     dmm: "https://services.runescape.com/m=hiscore_oldschool_deadman/index_lite.ws?player=",
     sdmm: "https://services.runescape.com/m=hiscore_oldschool_seasonal/index_lite.ws?player=",
     dmmt: "https://services.runescape.com/m=hiscore_oldschool_tournament/index_lite.ws?player=",

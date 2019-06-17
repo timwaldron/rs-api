@@ -52,14 +52,27 @@
           
           <div id="ruby" class="tabcontent" style="display: block;">
             <h3>Ruby</h3>
-            <pre class="prettyprint" style="font-family: monospace;">
-class Voila {
-public:
-  // Voila
-  static const string VOILA = "Voila";
+            <pre class="prettyprint" style="font-family: monospace">
+require 'net/http'
+require 'json'
 
-  // will not interfere with embedded <a href="#voila2">tags</a>.
-}
+@endpoint = 'https://rs-api.cloud/api/osrs/'
+
+def get_osrs_data(username)
+  response = Net::HTTP.get(URI(@endpoint + username))
+  return JSON.parse(response)
+end
+
+osrs_data = get_osrs_data "dimsimtim"
+
+puts osrs_data['username']
+# => dimsimtim
+
+puts osrs_data['skills']['cooking']
+# => {"rank"=>916944, "level"=>58, "experience"=>244950}
+
+puts osrs_data['skills']['cooking']['level']
+# => 58
               </pre>
           </div>
           
