@@ -18,22 +18,6 @@ export default class Footer extends React.Component {
             <img className="logo-styling" alt="Twitter Logo White" src={process.env.PUBLIC_URL + "/images/twitter-white.svg"} />
           </a>
         </div>
-
-        <div className="powered-by">
-          <p>Powered By</p>
-
-          <a href="https://nodejs.org/en/about/" target="_blank" rel="noopener noreferrer">
-            <img alt="Node.js Logo White" src={process.env.PUBLIC_URL + "/images/nodejs-white.svg"} />
-          </a>
-
-          <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
-            <img alt="React Logo White" src={process.env.PUBLIC_URL + "/images/react-white.svg"} />
-          </a>
-
-          <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">
-            <img alt="Heroku Logo White" src={process.env.PUBLIC_URL + "/images/heroku-white.svg"} />
-          </a>
-        </div>
         
       </div>
     );

@@ -8,11 +8,12 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, 'client/build')))
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/public/index.html'))
 });
 
 app.get("/api/:game/:username", (req, res) => {
+  console.log("Hit the /api endpoint!");
   let params = {
     game: req.params.game.toLowerCase(),
     category: "main",
