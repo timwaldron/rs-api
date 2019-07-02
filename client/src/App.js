@@ -20,9 +20,9 @@ export default class App extends Component {
   render = () => {
     return (
       <div className="App">
-        {this.state.playerdata && this.state.playerdata.toString() }
-
-        <input type="button" value="Get DimSimTim" onClick={this.getOsrsData} />
+        <h1>In the process of implementing a React front-end, brb!</h1>
+        <p>Endpoint: http://rs-api.cloud/api/<strong>:game</strong>/<strong>:username</strong></p>
+        <p>Example: http://rs-api.cloud/api/osrs/dimsimtim</p>
       </div>
     )
   }
