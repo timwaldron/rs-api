@@ -5,11 +5,10 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-
 // Serve static files from the React frontend app
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+  res.sendFile(__dirname + '/client/build/index.html');
 })
 
 // app.use(express.static(__dirname, 'client/build')); // Anything that doesn't match the above, send back index.html
