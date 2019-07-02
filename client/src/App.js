@@ -1,29 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Routes from './Routes';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 import './App.css'
 
-export default class App extends Component {
-  state = {
-    playerdata: null,
-  }
-  
-  componentDidMount = () => {
+export default class App extends React.Component {
 
-  }
-
-  getOsrsData = async() => {
-    let response = await fetch("/api/osrs/dimsimtim");
-    let data = await response.json();
-    console.log("Data receiveed:", data);
-    this.setState({playerdata: data});
-  }
-  
   render = () => {
     return (
-      <div className="App">
-        <h1>In the process of implementing a React front-end, brb!</h1>
-        <p>Endpoint: http://rs-api.cloud/api/<strong>:game</strong>/<strong>:username</strong></p>
-        <p>Example: http://rs-api.cloud/api/osrs/dimsimtim</p>
+      <div className="app-container">
+        <Navbar />
+        <Routes />
+        <Footer />
       </div>
-    )
+    );
   }
 }
