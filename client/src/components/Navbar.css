@@ -1,8 +1,16 @@
 .navbar-container {
   width: 100%;
-  background: dodgerblue;
+  background: #242b2e;
   height: 85px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.custom-link {
+  text-decoration: none;
+  margin: 0 10px 0 10px;
+  font-size: 18px;
+  color: white;
 }

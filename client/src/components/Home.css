@@ -1,0 +1,88 @@
+.home-content {
+  width: 100%;
+  /* height: 100%; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.endpoint-test-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.input-prepend-http {
+  height: 27px;
+  display: flex;
+  align-items: center;
+  background: #eee;
+  color:  #777;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  padding: 0 7px;
+}
+
+.input-prepend-endpoint {
+  height: 27px;
+  display: flex;
+  align-items: center;
+  background: #eee;
+  color:  #777;
+  border: 1px solid #ddd;
+  /* border-radius: 0 5px 5px 0; */
+  padding: 0 7px;
+}
+
+.stretch-span {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.endpoint-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0 5px 0;
+}
+
+.input-ign {
+  padding-left: 5px;
+  height: 27px;
+  width: 115px;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.input-btn {
+  height: 29px;
+  /* border: 0; */
+  /* width: 75px; */
+}
+
+.compare-responses {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-wrap: wrap;
+  /* overflow-y: scroll; */
+}
+
+.api-response {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* background: dodgerblue; */
+}
+
+.left {
+  align-items: flex-end;
+}
+
+.right {
+  align-items: flex-start;
+}

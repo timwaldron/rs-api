@@ -1,0 +1,33 @@
+.examples-tab-container {
+  display: flex;
+  margin: 30px 0 30px 0;
+}
+
+.nav-button {
+  box-sizing: border-box;
+  border: 1px solid rgb(167, 167, 167);
+  background: #777;
+  height: 45px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.nav-button:hover {
+  cursor: default;
+  background: rgb(95, 95, 95);
+}
+.start {
+  border-radius: 10px 0 0 10px;
+}
+.end {
+  border-radius: 0px 10px 10px 0px;
+}

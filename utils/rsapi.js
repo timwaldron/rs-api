@@ -18,8 +18,11 @@ const apiUrlList = {
   },
 };
 
-const fetchOSRSHiscore = async(params) => {
+const fetchOSRSHiscore = async(params, returnRawData) => {
   let response = await fetch(apiUrlList[params.game][params.category] + params.username);
+
+  if (returnRawData)
+    return await response.text();
 
   if (response.status == 404)
     return { error: "Returned 404 from the endpoint " + params.game + "/" + params.category + "/" + params.username };
