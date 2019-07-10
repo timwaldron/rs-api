@@ -9,7 +9,7 @@ This README is still being made.
 ## Endpoints
     https://rs-api.cloud/api/:game/:username
 ## Example
-    https://rs-api.cloud/api/osrs/dimsimtim
+    Endpoint: https://rs-api.cloud/api/osrs/test
     
     {
     "username": "test",
