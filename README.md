@@ -2,12 +2,13 @@
 Unofficial Old School / RuneScape 3 API written in Node.js using Express.  
 This README is still being made.
 
-
-  
-
 # How to use
 ## Endpoints
     https://rs-api.cloud/api/:game/:username
+
+<strong>game</strong> parameters
+* osrs
+* rs3
 ## Example
     Endpoint: https://rs-api.cloud/api/osrs/test
     
