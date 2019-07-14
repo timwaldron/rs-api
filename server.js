@@ -23,10 +23,11 @@ app.get("/api/:game/:username", (req, res) => {
 
   switch(params.game) {
     case "osrs":
-      rsapi.fetchOSRSHiscore(params).then((result) => res.json(result));
+      rsapi.fetchOSRSHiscore(params).then((result) => res.status(200).json(result));
       return;
 
     case "rs3":
+      rsapi.fetchRS3Hiscore(params).then((result) => res.status(200).json(result))
       break;
 
     default:
@@ -34,32 +35,8 @@ app.get("/api/:game/:username", (req, res) => {
       return;
   }
 
-  res.json({url: apiList.osrsHiscores});
+  // res.json({url: apiList.osrsHiscores});
 });
-
-// app.get("/api/:game/:category/:username", (req, res) => {
-//   let params = {
-//     game: req.params.game.toLowerCase(),
-//     category: req.params.category.toLowerCase(),
-//     username: req.params.username.toLowerCase().replace(" ", "_"),
-//   }
-
-//   switch(params.game) {
-//     case "osrs":
-//         rsapi.fetchOSRSHiscore(params).then((result) => res.json(result));
-//       return;
-
-//     case "rs3":
-
-//       break;
-
-//     default:
-//       res.json({"error": `'${req.params.game}' is an invalid gametype`});
-//       return;
-//   }
-
-//   res.json({url: apiList.osrsHiscores});
-// })
 
 app.get("/api/raw/:game/:username", (req, res) => {
   console.log("Hit the /api/raw endpoint!");
